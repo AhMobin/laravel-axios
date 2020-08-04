@@ -47,6 +47,11 @@ Route::group(['middleware'=>'loginCheck'], function (){
     Route::post('project-removed','Backend\ProjectController@removeProject');
     Route::post('project-details','Backend\ProjectController@detailsProject');
     Route::post('project-updated','Backend\ProjectController@updateProject');
+
+
+    //photo gallery
+    Route::get('gallery','Backend\GalleryController@gallery');
+
 });
 
 

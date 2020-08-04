@@ -7,23 +7,27 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link nav-font" href="#">Home</a>
+                <a class="nav-link nav-font" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-font" href="courses.html">Courses</a>
+                <a class="nav-link nav-font" href="#service">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-font" href="projects.html">Projects</a>
+                <a class="nav-link nav-font" href="#course">Courses</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link nav-font" href="blog.html">Blog</a>
+                <a class="nav-link nav-font" href="#project">Projects</a>
             </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link nav-font" href="blog">Blog</a>
+            </li> -->
             <li class="nav-item">
-                <a class="nav-link nav-font" href="#">Contact</a>
+                <a class="nav-link nav-font" href="#contact">Contact</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!-- <form class="form-inline my-2 my-lg-0">
             <button class="normal-btn btn" >Sign In</button>
-        </form>
+        </form> -->
     </div>
 </nav>

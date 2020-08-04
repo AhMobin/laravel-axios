@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','Frontend\PageController@index')->name('index');
+
+Route::post('contact-message','Frontend\PageController@contactMessage');

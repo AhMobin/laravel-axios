@@ -1,4 +1,4 @@
-<div class="container section-marginTop text-center">
+<div class="container section-marginTop text-center" id="service">
     <h1 class="section-title">Our Services </h1>
     <h1 class="section-subtitle">We provide IT related courses based on project</h1>
     <div class="row">

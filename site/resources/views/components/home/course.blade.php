@@ -1,5 +1,5 @@
 
-<div class="container section-marginTop text-center">
+<div class="container section-marginTop text-center" id="course">
     <h1 class="section-title">Our Courses</h1>
     <h1 class="section-subtitle">We Take IT Related Courses Based On Projects</h1>
     <div class="row">

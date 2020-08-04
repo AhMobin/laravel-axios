@@ -7,6 +7,8 @@ use App\Model\Visitor;
 use App\Model\Service;
 use App\Model\Course;
 use App\Model\Project;
+use App\Model\Contact;
+
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -28,6 +30,30 @@ class PageController extends Controller
 
 
         return view('index',compact('services','courses','projects'));
+    }
+
+
+
+    public function contactMessage(Request $request){
+
+        $name = $request->Name;
+        $mobile = $request->Mobile;
+        $email = $request->Email;
+        $msz = $request->Message;
+
+        $sent = Contact::create([
+            'contact_name' => $name,
+            'contact_mobile' => $mobile,
+            'contact_email' => $email,
+            'contact_message' => $msz,
+        ]);
+
+        if($sent==true){
+            return 1;
+        }else{
+            return 0;
+        }
+
     }
 
 

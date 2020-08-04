@@ -12,5 +12,9 @@
 
     @includeIf('components.home.project')
 
+    @includeIf('components.home.contact')
+
 
 @endsection
+
+

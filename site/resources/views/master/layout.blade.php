@@ -24,6 +24,7 @@
 
 @yield('content')
 
+@includeIf('master.footer')
 
 <script type="text/javascript" src="{{ asset('layout/js/jquery-3.4.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('layout/js/popper.min.js')}}"></script>
