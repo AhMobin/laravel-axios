@@ -50,7 +50,9 @@ Route::group(['middleware'=>'loginCheck'], function (){
 
 
     //photo gallery
-    Route::get('gallery','Backend\GalleryController@gallery');
+    Route::get('gallery','Backend\GalleryController@gallery')->name('gallery');
+    Route::get('photos','Backend\GalleryController@photoGalleries');
+    Route::post('photo-upload','Backend\GalleryController@photoUpload');
 
 });
 

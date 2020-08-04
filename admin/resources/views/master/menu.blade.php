@@ -23,6 +23,7 @@
                     	<li> <a href="{{ route('service') }}" ><span> <i class="fas fa-globe"></i> </span><span class="hide-menu">Services</span></a></li>
                     	<li> <a href="{{ route('course') }}" ><span> <i class="fa fa-book-open"></i> </span><span class="hide-menu">Courses</span></a></li>
                     	<li> <a href="{{ route('project') }}" ><span> <i class="fa fa-code"></i> </span><span class="hide-menu">Projects</span></a></li>
+                    	<li> <a href="{{ route('gallery') }}" ><span> <i class="fa fa-image"></i> </span><span class="hide-menu">Gallery</span></a></li>
 					</ul>
                 </nav>
             </div>
