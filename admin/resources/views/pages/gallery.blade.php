@@ -15,9 +15,15 @@
         </div>
 
         <div class="container-fluid">
-            <div class="row photoRow">
 
+            <div class="row photoRow">
+                //
             </div>
+
+
+            <button class="btn btn-sm btn-pin mt-3" id="loadMoreBtn"><i class="fas fa-sync fa-2x"></i></button>
+
+
         </div>
 
     </div>
@@ -117,8 +123,6 @@
 
         $('#photoSave').click(function () {
 
-            $('#photoSave').html("<div class='spinner-border spinner-border-sm' role='status'></div>")
-
             var imgFile = $('#newPhoto').prop('files')[0];
             var formData = new FormData();
             formData.append('photo',imgFile);
@@ -156,16 +160,45 @@
 
                 $.each(response.data, function (i,item) {
                     $("<div class='col-md-3 p-1'>").html(
-                    "<img src="+ item.location +" class='imgShow'>"
+                        "<img data-id="+ item.id +" src="+ item.location +" class='imgShow'>"
                     ).appendTo('.photoRow');
-                })
+                });
+
             })
             .catch(function (error) {
                 $('#loaderDiv').addClass('d-none');
                 $('#wrongDiv').removeClass('d-none');
-            })
+            });
+
         }
 
+        $('#loadMoreBtn').on('click',function (){
+            let firstImgId = $(this).closest('div').find('img').data('id');
+            loadById(firstImgId);
+        })
+
+        let imgId = 0;
+        function loadById(id){
+            imgId = imgId + 12;
+            let photoId = imgId+id;
+            axios.get('photos-load-by-id-'+photoId)
+                .then(function (response) {
+
+                    $('#loaderDiv').addClass('d-none');
+                    $('#contentDiv').removeClass('d-none');
+
+                    $.each(response.data, function (i,item) {
+                        $("<div class='col-md-3 p-1'>").html(
+                            "<img data-id="+ item.id +" src="+ item.location +" class='imgShow'>"
+                        ).appendTo('.photoRow');
+                    });
+
+                })
+                .catch(function (error) {
+                    $('#loaderDiv').addClass('d-none');
+                    $('#wrongDiv').removeClass('d-none');
+                });
+        }
     </script>
 
 @endsection

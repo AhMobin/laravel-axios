@@ -14,7 +14,14 @@ class GalleryController extends Controller
 
 
     public function photoGalleries(){
-        return Gallery::all();
+//        return Gallery::all();
+        return Gallery::take(12)->get();
+    }
+
+    public function photosLoadById($id){
+        $firstId = $id;
+        $lastId = $firstId + 12;
+        return Gallery::where('id','>=',$firstId)->where('id','<',$lastId)->get();
     }
 
 
